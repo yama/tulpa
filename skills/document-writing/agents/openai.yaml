@@ -1,0 +1,4 @@
+interface:
+  display_name: "Document Writing"
+  short_description: "Draft, review, and refine documents."
+  default_prompt: "Use $document-writing to draft, review, or refine this document while preserving intentional emphasis and removing accidental repetition."
