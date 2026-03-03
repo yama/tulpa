@@ -32,7 +32,7 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 ## ExecPlanの保存場所
 
 ```
-.agent/
+.agents/
 ├── PLANS.md              # この仕様書
 └── plans/
     ├── 001-auth.md       # 認証・認可
@@ -63,7 +63,7 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 
 ## ExecPlanのスケルトン
 
-以下をコピーして `.agent/plans/{連番}-{機能名}.md` として保存し、肉付けしてください。
+以下をコピーして `.agents/plans/{連番}-{機能名}.md` として保存し、肉付けしてください。
 
 ---
 
@@ -71,7 +71,7 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 
 このExecPlanは生きたドキュメントです。`Progress`・`Surprises & Discoveries`・`Decision Log`・`Outcomes & Retrospective` の各セクションは実装の進行に合わせて随時更新してください。
 
-このドキュメントは [.agent/PLANS.md](.agent/PLANS.md) の仕様に従っています。
+このドキュメントは [.agents/PLANS.md](.agents/PLANS.md) の仕様に従っています。
 
 ## Purpose / Big Picture
 

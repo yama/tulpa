@@ -130,14 +130,14 @@ app/
 
 ## ExecPlans
 
-複雑な機能の実装や大きなリファクタリングを行う場合は、ExecPlan（`.agent/PLANS.md` に定義）に従って設計から実装まで進める。
+複雑な機能の実装や大きなリファクタリングを行う場合は、ExecPlan（`.agents/PLANS.md` に定義）に従って設計から実装まで進める。
 
 - 実装前に必ずExecPlanを作成し、設計を確定させてから着手する
 - ExecPlanは生きたドキュメント。実装中に発見したことや設計変更は必ず記録する
 - ExecPlanだけを読めば、前提知識なしに実装を完遂できる状態を維持する
 - 小さな修正・バグ修正はExecPlan不要。複雑な機能・複数ファイルにまたがる変更には必須
 
-ExecPlanの書き方の仕様は [.agent/PLANS.md](.agent/PLANS.md) を参照。
+ExecPlanの書き方の仕様は [.agents/PLANS.md](.agents/PLANS.md) を参照。
 
 ## 開発フロー
 
