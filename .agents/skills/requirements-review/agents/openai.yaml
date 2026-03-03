@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirements Review"
+  short_description: "Draft and review requirements specs."
+  default_prompt: "Use $requirements-review to draft or review this requirements document so its scope, non-functional requirements, risks, and tradeoffs are explicit."
