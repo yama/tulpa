@@ -44,6 +44,8 @@ docs/
 |------|------|
 | Tulpa 全体の狙い、MVP 範囲、用語 | [requirements.md](./requirements.md) |
 | AI が実装前にどの順で文書を読むか | [context-loading-guide.md](./context-loading-guide.md) |
+| MVP をどの順で実装するか | [architecture/mvp-implementation-roadmap.md](./architecture/mvp-implementation-roadmap.md) |
+| MVP の進捗をどう管理するか | [architecture/mvp-wbs.md](./architecture/mvp-wbs.md) |
 | ロール設計、閲覧・操作境界 | [architecture/access-control-and-roles.md](./architecture/access-control-and-roles.md) |
 | エンティティ責務、履歴保持 | [architecture/data-model.md](./architecture/data-model.md) |
 | 実装前に残っている判断待ち項目 | [architecture/open-questions.md](./architecture/open-questions.md) |

@@ -10,6 +10,8 @@
 |------|------|
 | [access-control-and-roles.md](./access-control-and-roles.md) | 4 ロールの責務、閲覧・操作境界、強いアクセス制御対象の整理 |
 | [data-model.md](./data-model.md) | 主要エンティティ、参照関係、履歴保持、MVP と将来拡張の境界 |
+| [mvp-implementation-roadmap.md](./mvp-implementation-roadmap.md) | MVP をどの順で実装し、どの粒度で ExecPlan に分けるか |
+| [mvp-wbs.md](./mvp-wbs.md) | MVP の簡易進捗管理とタスク単位の完了判定 |
 | [open-questions.md](./open-questions.md) | 実装前に確認すべき未決事項、運用吸収項目、将来再設計項目 |
 | [review-worklist.md](./review-worklist.md) | MVP 文書レビューの優先順、観点、未決事項チェック |
 | [ui-and-screen-design.md](./ui-and-screen-design.md) | ロール別画面、主要導線、画面設計の解釈整理 |
