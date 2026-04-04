@@ -9,6 +9,7 @@
 | 文書 | 役割 |
 |------|------|
 | [contract-work-record-design.md](./contract-work-record-design.md) | `contract_party_type` と `WorkRecordRevision` の詳細判断 |
+| [legal-guardrails-for-outsourcing.md](./legal-guardrails-for-outsourcing.md) | 業務委託前提を崩さないための法務・UI・権限上のガードレール |
 
 ---
 
