@@ -29,9 +29,10 @@ docs/
 ## 2. 読み始める順序
 
 1. [要件定義書](./requirements.md)
-2. [アーキテクチャ文書ガイド](./architecture/README.md)
-3. 対象領域の設計書
-4. 必要に応じて `notes/` の個別メモ
+2. [AI 実装時のコンテキスト読込ガイド](./context-loading-guide.md)
+3. [アーキテクチャ文書ガイド](./architecture/README.md)
+4. 対象領域の設計書
+5. 必要に応じて `notes/` の個別メモ
 
 要件定義書は Tulpa の全体構想、スコープ、用語、フェーズ境界の SSOT です。`architecture/` は実装判断に使う設計書、`notes/` は個別論点の補助メモです。
 
@@ -42,6 +43,7 @@ docs/
 | 知りたいこと | 見る文書 |
 |------|------|
 | Tulpa 全体の狙い、MVP 範囲、用語 | [requirements.md](./requirements.md) |
+| AI が実装前にどの順で文書を読むか | [context-loading-guide.md](./context-loading-guide.md) |
 | ロール設計、閲覧・操作境界 | [architecture/access-control-and-roles.md](./architecture/access-control-and-roles.md) |
 | エンティティ責務、履歴保持 | [architecture/data-model.md](./architecture/data-model.md) |
 | 実装前に残っている判断待ち項目 | [architecture/open-questions.md](./architecture/open-questions.md) |

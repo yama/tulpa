@@ -52,6 +52,7 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 - **初心者向け**: このリポジトリを初めて見る人が読んでも実装できる水準で書く
 - **動作する成果物**: コードが書けた、ではなく「動作するものができた」を完了の定義とする
 - **観察可能な受け入れ条件**: 「HealthCheckクラスを追加した」ではなく「`/health` にアクセスするとHTTP 200が返る」のように、人間が確認できる形で書く
+- **根拠を記録する**: どの文書を読んで、どの境界を採用したかを ExecPlan に明記する
 
 ### 文体
 
@@ -76,6 +77,26 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 ## Purpose / Big Picture
 
 このExecPlanを完了すると何ができるようになるか、どうすれば動作を確認できるかを数文で説明します。ユーザーが目にする変化を中心に書いてください。
+
+## Source Documents
+
+このタスクの判断根拠にした文書を列挙します。最低限、`AGENTS.md`、`docs/requirements.md`、対象領域の設計書、`docs/architecture/open-questions.md` の確認結果を残してください。必要なら、どの章やどの節を根拠にしたかも書きます。
+
+## Scope Boundary
+
+このタスクで MVP として実装する範囲、やらない範囲、Phase 2/3 へ送る範囲を明記します。対象外にした理由も短く残します。
+
+## Open Questions Check
+
+`docs/architecture/open-questions.md` を確認し、このタスクに影響する項目があるかを書きます。影響がある場合は、実装を止めるのか、運用確定として扱うのか、将来送りとして無視するのかをここで固定します。
+
+## Terminology Check
+
+`AGENTS.md` の用語定義と衝突しないことを確認します。特にモデル名、画面ラベル、URL、状態名で別名を持ち込む場合は、その理由を書きます。
+
+## Design Priority
+
+文書間で迷いが出た場合の優先順位を書きます。基本は `AGENTS.md -> docs/requirements.md -> architecture docs -> notes -> ExecPlan 内の補足判断` とします。今回のタスクで例外がある場合だけ明記します。
 
 ## Progress
 
@@ -104,6 +125,8 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 ## Context and Orientation
 
 このタスクに関連する現状を、何も知らない読者向けに説明します。関連するファイルのフルパス・関数名・モジュール名を明示します。前のExecPlanへの参照だけで済ませず、必要な文脈はここに書いてください。
+
+この節では、`Source Documents` に書いた文書のうち、実装に直接効く前提を要約して埋め込みます。単に文書名を並べるだけで終わらせません。
 
 ## Plan of Work
 
@@ -144,3 +167,12 @@ ExecPlanは生きたドキュメントです。実装中に発見したことや
 
         public function start(Contract $contract, Carbon $startedAt): WorkRecord
         public function end(WorkRecord $record, Carbon $endedAt): WorkRecord
+
+---
+
+## 追加ガイド
+
+- `docs/context-loading-guide.md` に従って読書順を固定してから ExecPlan を書く
+- `Source Documents` は文書名だけでなく、どの判断に使ったかまで残す
+- `Open Questions Check` を飛ばさない。未確認のまま実装へ進めない
+- `Scope Boundary` が弱い ExecPlan は、MVP と将来対応の混線を招くので差し戻す

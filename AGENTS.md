@@ -14,6 +14,21 @@
 
 ---
 
+## 実装前の読書順
+
+AI エージェントは、コードを書く前に次の順で文書を確認すること。
+
+1. この `AGENTS.md`
+2. [docs/requirements.md](docs/requirements.md)
+3. [docs/context-loading-guide.md](docs/context-loading-guide.md)
+4. 対象領域の設計書
+5. [docs/architecture/open-questions.md](docs/architecture/open-questions.md)
+6. 複雑な変更なら対象タスクの ExecPlan
+
+対象領域の設計書だけを先に読んで実装を始めない。MVP 境界、将来対応、未解決事項の確認を先に済ませる。
+
+---
+
 ## 技術スタック
 
 - PHP 8.2+ / Laravel 12

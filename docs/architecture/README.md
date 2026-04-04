@@ -30,6 +30,7 @@
 ## 3. 参照順
 
 1. [../requirements.md](../requirements.md)
-2. この `README`
-3. 対象文書
-4. 必要なら [../notes/README.md](../notes/README.md)
+2. [../context-loading-guide.md](../context-loading-guide.md)
+3. この `README`
+4. 対象文書
+5. 必要なら [../notes/README.md](../notes/README.md)
