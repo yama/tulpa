@@ -17,12 +17,17 @@
 - [x] （2026-04-04 16:32 JST）権限・データモデル・稼働記録・契約ライフサイクルの補助ドキュメントを追加した
 - [x] （2026-04-04 16:44 JST）画面設計を `architecture/ui-and-screen-design.md` に整理し、検索しやすい配置へ再構成した
 - [x] （2026-04-04 16:44 JST）要件定義書から新規ドキュメントへの導線を追加した
-- [ ] 差分を確認し、ExecPlan の結果を更新する
+- [x] （2026-04-04 19:22 JST）読書順ガイド、ロードマップ、WBS、README 入口を追加し、文書群を AI 自走しやすい形へ仕上げた
+- [x] （2026-04-04 19:22 JST）差分を確認し、ExecPlan の結果を更新した
 
 ## Surprises & Discoveries
 
 - Observation: `docs/requirements.md` はすでにスコープ境界、AI責任境界、非機能要件まで含んでおり、要件の不足よりも「実装向けに読む単位が大きい」ことが主な課題だった。
   Evidence: 章 3 から章 7 に、役割、コア機能、画面設計、非機能要件、データモデルが一通り含まれている。
+- Observation: AI 駆動の文書構成では、設計書を増やすだけでなく「どの順で読むか」を固定しないと、局所設計だけ読んで実装に入る危険が残る。
+  Evidence: `docs/context-loading-guide.md` と AGENTS/README からの導線を追加した後、AI 実装の入口が説明しやすくなった。
+- Observation: 個人開発でも、ロードマップと WBS を分けると「段階設計」と「日々の進捗管理」が衝突しにくい。
+  Evidence: `mvp-implementation-roadmap.md` はマイルストーンと分割方針を持ち、`mvp-wbs.md` は状態管理に専念できた。
 
 ## Decision Log
 
@@ -35,10 +40,16 @@
 - Decision: 文書配置は `docs/` 直下へ並べず、`architecture/` と `notes/` に分類する。
   Rationale: 文書が増えたときに「画面設計はどこか」「個別メモはどこか」がすぐ分かる構成を優先するため。
   Date/Author: 2026-04-04 / Codex
+- Decision: AI 自走前の読書順は、個別設計書ではなく `AGENTS.md -> requirements.md -> context-loading-guide.md -> 対象設計書 -> open-questions.md -> ExecPlan` に固定する。
+  Rationale: 設計書だけ先に読むと MVP 境界や未決事項を見落としやすく、将来機能の混線を再発させるため。
+  Date/Author: 2026-04-04 / Codex
+- Decision: MVP 実装計画は `ロードマップ` と `WBS` に分け、実装順と進捗管理を分離する。
+  Rationale: ロードマップだけでは日々の状態が見えず、WBS だけでは段階設計の意図が伝わりにくいため。
+  Date/Author: 2026-04-04 / Codex
 
 ## Outcomes & Retrospective
 
-この作業により、Tulpa のドキュメントは `requirements.md` を起点に `architecture/` と `notes/` へ分かれる構成になった。画面設計の所在も `architecture/ui-and-screen-design.md` として明示されたため、今後の追加文書は分類規則に従って配置しやすくなった。残作業はリンク切れや表記揺れの確認のみである。
+この作業により、Tulpa のドキュメントは `requirements.md` を起点に `architecture/` と `notes/` へ分かれる構成になった。画面設計の所在も `architecture/ui-and-screen-design.md` として明示され、さらに `context-loading-guide.md`、`mvp-implementation-roadmap.md`、`mvp-wbs.md` により AI 自走の読書順、実装順、進捗管理の入口まで整った。README にモック画像を載せたことで、採用・デモ用途でも repo 全体像を掴みやすくなった。
 
 ## Context and Orientation
 

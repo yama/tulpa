@@ -1,0 +1,23 @@
+{
+    "id": "20260404T192200+0900-ai-repos-need-explicit-reading-order",
+    "recorded_at": "2026-04-04T19:22:00+09:00",
+    "source": "implementation",
+    "scope": "documentation",
+    "title": "AI-driven repos need an explicit reading order",
+    "observation": "Even after design documents are split by concern, AI implementation still risks skipping requirements boundaries unless the repository defines a fixed reading order from AGENTS to requirements, architecture, open questions, and ExecPlan.",
+    "impact": "A dedicated reading-order guide reduces the chance of local design docs being read in isolation and helps future implementation stay within MVP and unresolved-boundary constraints.",
+    "candidate_rule": "When a repository relies on AI-driven implementation, add an explicit reading-order guide and backlink it from AGENTS and top-level docs.",
+    "confidence": "high",
+    "promotion_target": "AGENTS.md",
+    "status": "captured",
+    "evidence": [
+        "The documentation set became easier to explain only after context-loading-guide.md and AGENTS backlinks were added",
+        "Before the reading-order guide, the repo had the right documents but not a fixed path through them"
+    ],
+    "related_files": [
+        "AGENTS.md",
+        "docs/context-loading-guide.md",
+        "docs/README.md",
+        "docs/architecture/README.md"
+    ]
+}

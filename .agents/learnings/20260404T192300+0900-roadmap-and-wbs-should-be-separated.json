@@ -1,0 +1,22 @@
+{
+    "id": "20260404T192300+0900-roadmap-and-wbs-should-be-separated",
+    "recorded_at": "2026-04-04T19:23:00+09:00",
+    "source": "implementation",
+    "scope": "planning",
+    "title": "Roadmap and WBS should be separated in AI-driven planning",
+    "observation": "A single planning document made it hard to show both milestone intent and day-to-day execution state; separating roadmap from WBS produced a clearer structure for both humans and AI.",
+    "impact": "The roadmap can explain sequencing and milestone purpose, while the WBS can stay focused on task status, completion checks, and holds without becoming a narrative document.",
+    "candidate_rule": "When planning multi-step AI-driven implementation, keep roadmap and WBS as separate markdown documents and let ExecPlans sit below them.",
+    "confidence": "high",
+    "promotion_target": "reference",
+    "status": "captured",
+    "evidence": [
+        "mvp-implementation-roadmap.md could focus on milestone intent and task slicing",
+        "mvp-wbs.md could focus on status, completion criteria, and hold notes without restating roadmap rationale"
+    ],
+    "related_files": [
+        "docs/architecture/mvp-implementation-roadmap.md",
+        "docs/architecture/mvp-wbs.md",
+        ".agents/PLANS.md"
+    ]
+}
