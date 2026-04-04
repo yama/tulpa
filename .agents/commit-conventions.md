@@ -52,14 +52,14 @@ chore(git): ignore .codex environment marker
 
 ## Summary Rules
 
-- `summary` は短い英語で書く
+- `summary` は短い日本語で書く
 - 変更結果を動詞で始める
 - 実装手段よりも、何が変わったかを優先する
 
 良い例:
 
-- `feat(agents): add learning audit command`
-- `docs(knowledge): define future reminder workflow`
+- `feat(agents): 学習監査コマンドを追加する`
+- `docs(knowledge): 将来検討事項の扱いを定義する`
 
 避ける例:
 
@@ -131,6 +131,12 @@ Learnings:
 
 Refs:
 - .agents/plans/001-agent-learning-system.md
+```
+
+日本語運用に置き換える場合の例:
+
+```text
+feat(agents): 自己改善ワークフローを追加する
 ```
 
 ## Meta Rule
