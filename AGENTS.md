@@ -150,6 +150,24 @@ ExecPlanの書き方の仕様は [.agents/PLANS.md](.agents/PLANS.md) を参照�
 
 ---
 
+## エージェント運用知見の扱い
+
+- `AGENTS.md` は原則・判断基準・用語のSSOTとして保つ。事例集や細かな運用メモはここに蓄積しない
+- チャット・実装・レビューで得た学びは、まず `.agents/learnings/` に記録する
+- 学びのうち、再発防止や横断的な品質向上に効くものだけを `AGENTS.md`・スキル・参照資料へ昇格する
+- 詳細な背景・失敗例・圧縮ルール・昇格基準は `.agents/agent-improvement.md` を参照する
+- 複雑な実装では、関連する学びを ExecPlan の `Surprises & Discoveries` と `Decision Log` にも残す
+
+---
+
+## コミットメッセージ
+
+- コミットメッセージは Conventional Commits に倣い、`type(scope): summary` を基本形とする
+- 履歴は AI と人間の両方が読める運用ログとして扱い、必要に応じて `Why` `What` `Impact` `Learnings` `Follow-up` `Refs` を本文に残す
+- 詳細な規約とスコープ例は `.agents/commit-conventions.md` を参照する
+
+---
+
 ## オプション機能の扱い
 
 Claude API・Slack APIはオプション機能。未設定でもコア機能が動作する設計を維持する。

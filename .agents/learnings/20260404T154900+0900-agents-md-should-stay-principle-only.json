@@ -1,0 +1,22 @@
+{
+    "id": "20260404T154900+0900-agents-md-should-stay-principle-only",
+    "recorded_at": "2026-04-04T15:49:00+09:00",
+    "source": "implementation",
+    "scope": "agent-workflow",
+    "title": "AGENTS.md should stay principle-only",
+    "observation": "When adding a self-improvement loop, the top-level guide should link outward instead of absorbing examples and heuristics.",
+    "impact": "Keeping AGENTS.md short makes it easier to re-read before every task and reduces accidental rule drift.",
+    "candidate_rule": "Promote only stable cross-cutting rules into AGENTS.md, and move detail into skills, references, or learnings.",
+    "confidence": "high",
+    "promotion_target": "AGENTS.md",
+    "status": "captured",
+    "evidence": [
+        "Existing Tulpa skills already separate SKILL.md from references/.",
+        "The repository's top-level agent guidance is read frequently and should remain scannable."
+    ],
+    "related_files": [
+        "AGENTS.md",
+        ".agents/agent-improvement.md",
+        ".agents/skills/document-writing/SKILL.md"
+    ]
+}
