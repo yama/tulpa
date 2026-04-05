@@ -11,6 +11,10 @@ docs/
 ├── README.md
 ├── requirements.md
 ├── context-loading-guide.md
+├── setup/
+│   ├── README.md
+│   ├── development.md
+│   └── installation.md
 ├── architecture/
 │   ├── README.md
 │   ├── access-control-and-roles.md
@@ -46,6 +50,8 @@ docs/
 4. 対象領域の設計書
 5. 必要に応じて `notes/` の個別メモ
 
+セットアップや導入状況を確認したい場合は [setup/README.md](./setup/README.md) を起点にします。
+
 要件定義書は Tulpa の全体構想、スコープ、用語、フェーズ境界の SSOT です。`architecture/` は実装判断に使う設計書、`notes/` は個別論点の補助メモです。
 
 ---
@@ -56,6 +62,8 @@ docs/
 |------|------|
 | Tulpa 全体の狙い、MVP 範囲、用語 | [requirements.md](./requirements.md) |
 | AI が実装前にどの順で文書を読むか | [context-loading-guide.md](./context-loading-guide.md) |
+| 開発者向けセットアップ | [setup/development.md](./setup/development.md) |
+| 導入ガイドの現状 | [setup/installation.md](./setup/installation.md) |
 | MVP をどの順で実装するか | [architecture/mvp-implementation-roadmap.md](./architecture/mvp-implementation-roadmap.md) |
 | MVP の進捗をどう管理するか | [architecture/mvp-wbs.md](./architecture/mvp-wbs.md) |
 | レンタルサーバ前提の実装制約 | [architecture/hosting-and-operations-constraints.md](./architecture/hosting-and-operations-constraints.md) |
@@ -74,6 +82,7 @@ docs/
 ## 4. 文書追加ルール
 
 - 全体方針やフェーズ境界を変える内容は `requirements.md` に書く
+- 開発環境セットアップや導入手順は `setup/` に置く
 - 実装判断に使う継続的な設計書は `architecture/` に置く
 - 状態遷移や業務フロー中心の設計書は `architecture/workflows/` に置く
 - 迷いやすい単一論点や一時的な補助メモは `notes/` に置く

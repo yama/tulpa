@@ -116,18 +116,33 @@ Requirements
 
 ---
 
-## セットアップ
+## 現在の提供状態
+
+Tulpa はまだ開発中です。現時点では、エージェント会社や個人事業主がそのまま業務投入できる完成版アプリとしては提供していません。
+
+この README にある手順は、現状のコードや設計を確認したい開発者向けの暫定情報です。実運用を前提とした導入手順、バックアップ方針、運用手順は、実装と設計の確定に合わせて別途整理します。
+
+- 開発者向けセットアップ: [docs/setup/development.md](docs/setup/development.md)
+- 導入ガイドの受け皿: [docs/setup/installation.md](docs/setup/installation.md)
+
+---
+
+## 開発環境の暫定セットアップ
 
 ```bash
 git clone https://github.com/yama/tulpa.git
 cd tulpa
-composer install --no-dev
+composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
 ```
 
-アプリケーションのセットアップ手順は、実装の進行に合わせて追加します。
+`--no-dev` は本番配布や検証用ビルドを想定したオプションであり、現段階の開発セットアップ手順としては使いません。
+
+詳細は [docs/setup/development.md](docs/setup/development.md) を参照してください。
+
+本番導入向けの正式なインストールガイドは未整備です。共有ホスティングを含む配布・運用手順は、MVP の実装と運用要件が固まった段階で [docs/setup/installation.md](docs/setup/installation.md) に整理します。
 
 ---
 
