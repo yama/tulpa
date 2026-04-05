@@ -124,7 +124,7 @@ Tulpa で AI エージェントがチャット、設計、実装、レビュー�
 ## 推奨コマンド
 
 ```bash
-php scripts/agents/record_learning.php \
+php .agents/scripts/record_learning.php \
   --source=implementation \
   --scope=agent-workflow \
   --title='AGENTS.md should stay principle-only' \
@@ -135,13 +135,13 @@ php scripts/agents/record_learning.php \
   --promotion-target=AGENTS.md \
   --related-file=AGENTS.md
 
-php scripts/agents/summarize_learnings.php
+php .agents/scripts/summarize_learnings.php
 
-php scripts/agents/propose_agent_updates.php
+php .agents/scripts/propose_agent_updates.php
 
-php scripts/agents/refresh_memory.php
+php .agents/scripts/refresh_memory.php
 
-php scripts/agents/audit_learnings.php
+php .agents/scripts/audit_learnings.php
 ```
 
 ## 運用のコツ
@@ -151,6 +151,6 @@ php scripts/agents/audit_learnings.php
 - レポート生成の結果、昇格候補が多すぎる場合はルールを増やすのではなく分類軸を見直す
 - `AGENTS.md` を編集するときは、既存ルールを置き換えるのか、参照先を追加するのかを先に決める
 - 整理済み知識を追加したら `.agents/knowledge/MEMORY.md` の索引も更新する
-- `.agents/knowledge/` にファイルを追加・削除したら `php scripts/agents/refresh_memory.php` を実行する
-- learnings が増えたら `php scripts/agents/audit_learnings.php` で重複と棚卸し候補を確認する
+- `.agents/knowledge/` にファイルを追加・削除したら `php .agents/scripts/refresh_memory.php` を実行する
+- learnings が増えたら `php .agents/scripts/audit_learnings.php` で重複と棚卸し候補を確認する
 - 「これは規約か、スキルか」で迷ったら `.agents/knowledge/meta-behavior.md` を先に見る

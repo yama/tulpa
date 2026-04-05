@@ -33,7 +33,7 @@
 - Status: in_progress
 - Revisit When: `superseded` 候補や重複候補が増え、手では追いづらくなったとき
 - Why It Matters: 知識は増えるより腐るほうが危険なので、棚卸しの自動化価値が高い
-- Current Step: `scripts/agents/audit_learnings.php` を導入して最小監査を始める
+- Current Step: `.agents/scripts/audit_learnings.php` を導入して最小監査を始める
 
 ## Review Rule
 

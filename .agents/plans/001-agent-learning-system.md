@@ -16,9 +16,9 @@
 - [x] （2026-04-04 07:49Z）学びの記録・要約・昇格提案を行う PHP CLI スクリプトを実装した
 - [x] （2026-04-04 07:56Z）`AGENTS.md` と新規スキルを参照型に更新し、検証を実行した
 - [x] （2026-04-04 08:07Z）`.agents/knowledge/MEMORY.md` を索引として導入し、アーカイブ方針を追加した
-- [x] （2026-04-04 08:16Z）知識索引を再生成する `scripts/agents/refresh_memory.php` を実装し、運用文書へ反映した
+- [x] （2026-04-04 08:16Z）知識索引を再生成する `.agents/scripts/refresh_memory.php` を実装し、運用文書へ反映した
 - [x] （2026-04-04 08:32Z）`knowledge` ノートをトピック別に追加し、将来検討の保留先を文書化した
-- [x] （2026-04-04 08:39Z）`scripts/agents/audit_learnings.php` を実装し、重複・保留・失効候補を監査できるようにした
+- [x] （2026-04-04 08:39Z）`.agents/scripts/audit_learnings.php` を実装し、重複・保留・失効候補を監査できるようにした
 - [x] （2026-04-04 09:03Z）コミットメッセージ規約を運用文書として追加し、実行手順を commit-writing スキルへ分離した
 
 ## Surprises & Discoveries
@@ -72,17 +72,17 @@
 
 ## Plan of Work
 
-まず `.agents/plans/001-agent-learning-system.md` と `.agents/agent-improvement.md` を追加し、保存先、昇格基準、圧縮方針、レビュー境界を文書として定義する。次に `.agents/learnings/` と `.agents/knowledge/` を作成し、前者を一次記録、後者を人間向けの整理済み知識置き場にする。続いて `scripts/agents/record_learning.php`、`scripts/agents/summarize_learnings.php`、`scripts/agents/propose_agent_updates.php` を追加し、標準 PHP だけで記録・要約・提案ができるようにする。
+まず `.agents/plans/001-agent-learning-system.md` と `.agents/agent-improvement.md` を追加し、保存先、昇格基準、圧縮方針、レビュー境界を文書として定義する。次に `.agents/learnings/` と `.agents/knowledge/` を作成し、前者を一次記録、後者を人間向けの整理済み知識置き場にする。続いて `.agents/scripts/record_learning.php`、`.agents/scripts/summarize_learnings.php`、`.agents/scripts/propose_agent_updates.php` を追加し、標準 PHP だけで記録・要約・提案ができるようにする。
 
-最後に `AGENTS.md` へ短い運用ポリシーを追加し、新しいスキル `.agents/skills/agent-self-improvement/SKILL.md` と参照資料を追加して、今後のエージェントが同じ流儀で知見を扱える状態にする。さらに `.agents/knowledge/MEMORY.md` を知識索引とし、`scripts/agents/refresh_memory.php` で再生成できるようにする。加えて、トピック別 `knowledge` ノートと `future-considerations.md` を用意し、`scripts/agents/audit_learnings.php` で棚卸しを補助する。
+最後に `AGENTS.md` へ短い運用ポリシーを追加し、新しいスキル `.agents/skills/agent-self-improvement/SKILL.md` と参照資料を追加して、今後のエージェントが同じ流儀で知見を扱える状態にする。さらに `.agents/knowledge/MEMORY.md` を知識索引とし、`.agents/scripts/refresh_memory.php` で再生成できるようにする。加えて、トピック別 `knowledge` ノートと `future-considerations.md` を用意し、`.agents/scripts/audit_learnings.php` で棚卸しを補助する。
 
 ## Concrete Steps
 
     cd /home/yamamoto/ghq/github.com/yama/tulpa
-    mkdir -p .agents/plans .agents/learnings .agents/knowledge .agents/skills/agent-self-improvement/references scripts/agents
+    mkdir -p .agents/plans .agents/learnings .agents/knowledge .agents/skills/agent-self-improvement/references .agents/scripts
     # → エージェント改善基盤の保存先が揃う
 
-    php scripts/agents/record_learning.php \
+    php .agents/scripts/record_learning.php \
       --source=implementation \
       --scope=agent-workflow \
       --title='AGENTS.md should stay principle-only' \
@@ -93,21 +93,21 @@
       --promotion-target=AGENTS.md
     # → .agents/learnings/ に JSON ファイルが1件生成される
 
-    php scripts/agents/summarize_learnings.php
+    php .agents/scripts/summarize_learnings.php
     # → Markdown の要約が標準出力に表示される
 
-    php scripts/agents/propose_agent_updates.php
+    php .agents/scripts/propose_agent_updates.php
     # → 昇格候補と保留候補をまとめた Markdown が標準出力に表示される
 
-    php scripts/agents/refresh_memory.php --stdout
+    php .agents/scripts/refresh_memory.php --stdout
     # → `.agents/knowledge/` の索引内容が Markdown で標準出力に表示される
 
-    php scripts/agents/audit_learnings.php
+    php .agents/scripts/audit_learnings.php
     # → learnings の重複候補、保留候補、失効レコードが Markdown で表示される
 
 ## Validation and Acceptance
 
-`php scripts/agents/record_learning.php ...` を実行すると `.agents/learnings/` に JSON 学びファイルが作成される。`php scripts/agents/summarize_learnings.php` を実行すると、件数、トピック別集計、直近の学びが Markdown で出力される。`php scripts/agents/propose_agent_updates.php` を実行すると、`AGENTS.md`・スキル・参照資料のどこへ昇格すべきかを示す Markdown 提案が表示される。`php scripts/agents/refresh_memory.php --stdout` を実行すると、`.agents/knowledge/MEMORY.md` 相当の索引と将来リマインダが Markdown で表示される。`php scripts/agents/audit_learnings.php` を実行すると、重複候補、昇格待ち候補、`superseded` レコードが表示される。さらに `AGENTS.md` を読むと、学びの詳細をそこに溜めず、`.agents/agent-improvement.md` を参照する方針が明記されている。
+`php .agents/scripts/record_learning.php ...` を実行すると `.agents/learnings/` に JSON 学びファイルが作成される。`php .agents/scripts/summarize_learnings.php` を実行すると、件数、トピック別集計、直近の学びが Markdown で出力される。`php .agents/scripts/propose_agent_updates.php` を実行すると、`AGENTS.md`・スキル・参照資料のどこへ昇格すべきかを示す Markdown 提案が表示される。`php .agents/scripts/refresh_memory.php --stdout` を実行すると、`.agents/knowledge/MEMORY.md` 相当の索引と将来リマインダが Markdown で表示される。`php .agents/scripts/audit_learnings.php` を実行すると、重複候補、昇格待ち候補、`superseded` レコードが表示される。さらに `AGENTS.md` を読むと、学びの詳細をそこに溜めず、`.agents/agent-improvement.md` を参照する方針が明記されている。
 
 ## Idempotence and Recovery
 
@@ -117,15 +117,15 @@
 
     .agents/learnings/20260404T165000+0900-agents-md-principle-only.json
     .agents/agent-improvement.md
-    scripts/agents/record_learning.php
-    scripts/agents/summarize_learnings.php
-    scripts/agents/propose_agent_updates.php
-    scripts/agents/refresh_memory.php
-    scripts/agents/audit_learnings.php
+    .agents/scripts/record_learning.php
+    .agents/scripts/summarize_learnings.php
+    .agents/scripts/propose_agent_updates.php
+    .agents/scripts/refresh_memory.php
+    .agents/scripts/audit_learnings.php
 
 ## Interfaces and Dependencies
 
-`scripts/agents/record_learning.php` は以下の CLI オプションを受け取る:
+`.agents/scripts/record_learning.php` は以下の CLI オプションを受け取る:
 
     --source=<chat|implementation|review|retrospective|other>
     --scope=<topic>
@@ -139,10 +139,10 @@
     --related-file=<repeatable>
     --status=<captured|promoted|superseded>
 
-`scripts/agents/summarize_learnings.php` は `.agents/learnings/*.json` を読み、件数・トピック別集計・直近項目を Markdown として返す。
+`.agents/scripts/summarize_learnings.php` は `.agents/learnings/*.json` を読み、件数・トピック別集計・直近項目を Markdown として返す。
 
-`scripts/agents/propose_agent_updates.php` は同じ入力から昇格候補を抽出し、`promotion-target` と再発数に基づいて `AGENTS.md`・スキル・参照資料向けの提案文を返す。
+`.agents/scripts/propose_agent_updates.php` は同じ入力から昇格候補を抽出し、`promotion-target` と再発数に基づいて `AGENTS.md`・スキル・参照資料向けの提案文を返す。
 
-`scripts/agents/refresh_memory.php` は `.agents/knowledge/` と `.agents/learnings/*.json` を読み、索引としての `MEMORY.md` を生成する。`--stdout` で標準出力へ、指定なしで `.agents/knowledge/MEMORY.md` へ書き出す。
+`.agents/scripts/refresh_memory.php` は `.agents/knowledge/` と `.agents/learnings/*.json` を読み、索引としての `MEMORY.md` を生成する。`--stdout` で標準出力へ、指定なしで `.agents/knowledge/MEMORY.md` へ書き出す。
 
-`scripts/agents/audit_learnings.php` は `.agents/learnings/*.json` を監査し、重複した `candidate_rule` や `title`、昇格前に追加証拠が必要な候補、`superseded` レコードを一覧化する。
+`.agents/scripts/audit_learnings.php` は `.agents/learnings/*.json` を監査し、重複した `candidate_rule` や `title`、昇格前に追加証拠が必要な候補、`superseded` レコードを一覧化する。

@@ -136,6 +136,18 @@ php artisan migrate
 - プロダクトと設計の文書: [docs/README.md](docs/README.md)
 - AI エージェント向けガイド: [AGENTS.md](AGENTS.md)
 - ExecPlan 仕様: [.agents/PLANS.md](.agents/PLANS.md)
+- エージェント改善運用ガイド: [.agents/agent-improvement.md](.agents/agent-improvement.md)
+
+### `.agents` 配下の構成
+
+AI エージェント運用に関するファイルは `.agents/` 配下へ集約しています。
+
+| 場所 | 役割 | 主な中身 |
+|------|------|---------|
+| `.agents/` | エージェント運用のルール・知識・計画・補助コマンドを置く | `PLANS.md`、`agent-improvement.md`、`plans/`、`skills/`、`learnings/`、`knowledge/`、`scripts/` |
+| `.agents/scripts/` | `.agents/` の内容を記録・集約・監査するための CLI を置く | `record_learning.php`、`summarize_learnings.php`、`propose_agent_updates.php`、`refresh_memory.php`、`audit_learnings.php` |
+
+要するに、`.agents/` は AI エージェント運用のまとまり全体で、`.agents/scripts/` はその中の更新・棚卸し用ツールです。
 
 ---
 

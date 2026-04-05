@@ -158,7 +158,7 @@ Why:
 
 What:
 - .agents/learnings と .agents/knowledge を追加
-- scripts/agents に記録・集約・監査コマンドを追加
+- `.agents/scripts/` に記録・集約・監査コマンドを追加
 - AGENTS.md を参照型構成に更新
 
 Impact:

@@ -34,11 +34,11 @@ description: Capture learnings from chat, implementation, and review; compress t
 ## Commands
 
 ```bash
-php scripts/agents/record_learning.php --help
-php scripts/agents/summarize_learnings.php
-php scripts/agents/propose_agent_updates.php
-php scripts/agents/refresh_memory.php
-php scripts/agents/audit_learnings.php
+php .agents/scripts/record_learning.php --help
+php .agents/scripts/summarize_learnings.php
+php .agents/scripts/propose_agent_updates.php
+php .agents/scripts/refresh_memory.php
+php .agents/scripts/audit_learnings.php
 ```
 
 ## References

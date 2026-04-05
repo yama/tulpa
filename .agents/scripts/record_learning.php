@@ -27,7 +27,7 @@ $options = getopt('', [
 if (array_key_exists('help', $options)) {
     fwrite(STDOUT, <<<TEXT
 Usage:
-  php scripts/agents/record_learning.php --source=implementation --scope=agent-workflow --title='...' --observation='...' --impact='...'
+  php .agents/scripts/record_learning.php --source=implementation --scope=agent-workflow --title='...' --observation='...' --impact='...'
 
 Options:
   --source            chat|implementation|review|retrospective|other
