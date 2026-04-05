@@ -36,6 +36,7 @@
 関連文書:
 
 - [requirements.md](../requirements.md)
+- [hosting-and-operations-constraints.md](./hosting-and-operations-constraints.md)
 
 影響:
 

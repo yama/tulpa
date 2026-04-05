@@ -84,6 +84,7 @@ Tulpaが提供する効率化・自動化は、それ自体が目的ではない
 - [アーキテクチャ文書ガイド](./architecture/README.md)
 - [権限とアクセス境界の設計メモ](./architecture/access-control-and-roles.md)
 - [データモデル補助設計](./architecture/data-model.md)
+- [ホスティング・運用制約](./architecture/hosting-and-operations-constraints.md)
 - [画面設計と主要導線の整理](./architecture/ui-and-screen-design.md)
 - [稼働記録と月次稼働報告の設計メモ](./architecture/workflows/work-record-and-report-design.md)
 - [案件と契約ライフサイクルの設計メモ](./architecture/workflows/project-contract-lifecycle.md)

@@ -10,10 +10,22 @@
 docs/
 ├── README.md
 ├── requirements.md
+├── context-loading-guide.md
 ├── architecture/
 │   ├── README.md
 │   ├── access-control-and-roles.md
+│   ├── artifacts/
+│   │   ├── README.md
+│   │   ├── detailed-design-draft.md
+│   │   ├── entity-relationship-draft.md
+│   │   ├── screen-transition-draft.md
+│   │   └── table-definition-draft.md
 │   ├── data-model.md
+│   ├── hosting-and-operations-constraints.md
+│   ├── mvp-implementation-roadmap.md
+│   ├── mvp-wbs.md
+│   ├── open-questions.md
+│   ├── review-worklist.md
 │   ├── ui-and-screen-design.md
 │   └── workflows/
 │       ├── README.md
@@ -46,9 +58,11 @@ docs/
 | AI が実装前にどの順で文書を読むか | [context-loading-guide.md](./context-loading-guide.md) |
 | MVP をどの順で実装するか | [architecture/mvp-implementation-roadmap.md](./architecture/mvp-implementation-roadmap.md) |
 | MVP の進捗をどう管理するか | [architecture/mvp-wbs.md](./architecture/mvp-wbs.md) |
+| レンタルサーバ前提の実装制約 | [architecture/hosting-and-operations-constraints.md](./architecture/hosting-and-operations-constraints.md) |
 | ロール設計、閲覧・操作境界 | [architecture/access-control-and-roles.md](./architecture/access-control-and-roles.md) |
 | エンティティ責務、履歴保持 | [architecture/data-model.md](./architecture/data-model.md) |
 | 実装前に残っている判断待ち項目 | [architecture/open-questions.md](./architecture/open-questions.md) |
+| ER図、テーブル定義、画面遷移、詳細設計の暫定成果物 | [architecture/artifacts/README.md](./architecture/artifacts/README.md) |
 | MVP 文書レビューの進め方 | [architecture/review-worklist.md](./architecture/review-worklist.md) |
 | 稼働記録から月次報告までの流れ | [architecture/workflows/work-record-and-report-design.md](./architecture/workflows/work-record-and-report-design.md) |
 | 案件、契約、更新・終了の扱い | [architecture/workflows/project-contract-lifecycle.md](./architecture/workflows/project-contract-lifecycle.md) |

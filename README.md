@@ -20,6 +20,7 @@ AI はオプション機能として扱います。Tulpa のコアは、AI が�
 - ドキュメント入口: [docs/README.md](docs/README.md)
 - 実装ロードマップ: [docs/architecture/mvp-implementation-roadmap.md](docs/architecture/mvp-implementation-roadmap.md)
 - 進捗管理: [docs/architecture/mvp-wbs.md](docs/architecture/mvp-wbs.md)
+- レンタルサーバ前提の実装制約: [docs/architecture/hosting-and-operations-constraints.md](docs/architecture/hosting-and-operations-constraints.md)
 - AI 実装時の読書順: [docs/context-loading-guide.md](docs/context-loading-guide.md)
 
 ---
@@ -94,6 +95,8 @@ Requirements
   マイルストーン単位の実装順
 - [docs/architecture/mvp-wbs.md](docs/architecture/mvp-wbs.md)
   簡易進捗管理
+- [docs/architecture/hosting-and-operations-constraints.md](docs/architecture/hosting-and-operations-constraints.md)
+  レンタルサーバ前提での実装制約と運用前提
 - [.agents/PLANS.md](.agents/PLANS.md)
   ExecPlan の仕様
 
