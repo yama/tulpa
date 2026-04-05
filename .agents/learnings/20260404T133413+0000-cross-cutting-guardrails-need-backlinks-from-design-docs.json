@@ -1,0 +1,22 @@
+{
+    "id": "20260404T133413+0000-cross-cutting-guardrails-need-backlinks-from-design-docs",
+    "recorded_at": "2026-04-04T13:34:13+00:00",
+    "source": "implementation",
+    "scope": "documentation",
+    "title": "Cross-cutting guardrails need backlinks from design docs",
+    "observation": "A standalone note about outsourcing legal guardrails is easier to miss during implementation unless the relevant workflow and access-control design docs link to it directly.",
+    "impact": "Adding backlinks from the authoritative design docs makes legal and terminology constraints much more likely to influence future implementation and review decisions.",
+    "candidate_rule": "When adding a cross-cutting guardrail note, also add explicit references from the design documents where the rule changes implementation decisions.",
+    "confidence": "high",
+    "promotion_target": "reference",
+    "status": "captured",
+    "evidence": [
+        "The new outsourcing guardrail note only became part of the normal reading path after links were added to work-record and access-control docs",
+        "The project already relies on document reading order and SSOT references to shape implementation behavior"
+    ],
+    "related_files": [
+        "docs/notes/legal-guardrails-for-outsourcing.md",
+        "docs/architecture/workflows/work-record-and-report-design.md",
+        "docs/architecture/access-control-and-roles.md"
+    ]
+}
