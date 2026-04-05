@@ -13,7 +13,21 @@ Tulpa でエージェントが作業するときの最小運用フローを整�
 4. その発見が横断的に効くなら `.agents/learnings/` に 1 論点 1 ファイルで切り出す
 5. 区切りで `summarize_learnings.php` と `propose_agent_updates.php` を回す
 6. 整理済み知識を追加したら `refresh_memory.php` を回す
-7. コミット前に必要なら commit-writing スキルでメッセージ案を整える
+7. 区切りで `git status --short` を見て、次の concern に進む前にコミット可否を判断する
+8. コミット前に必要なら commit-writing スキルでメッセージ案を整える
+
+## Commit Checkpoints
+
+- 1 つの機能、修正、文書整理が終わったとき
+- テストや確認が終わったとき
+- 次の変更が別 concern に移るとき
+- 自分でもコミット件名を 1 行で言えそうなとき
+
+次の状態なら、コミット前に差分整理を優先する。
+
+- 試行錯誤の残骸が混ざっている
+- 他人の変更と自分の変更が混ざっている
+- 未完成で失敗する状態をそのまま残そうとしている
 
 ## Escalation Rules
 
