@@ -1,7 +1,7 @@
 # Tulpa
 
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Development-2563eb)
 ![Development](https://img.shields.io/badge/Development-AI%20Driven-0f766e)
 ![License](https://img.shields.io/badge/License-MIT-16a34a)
