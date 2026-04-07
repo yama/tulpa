@@ -6,7 +6,7 @@
 ![Development](https://img.shields.io/badge/Development-AI%20Driven-0f766e)
 ![License](https://img.shields.io/badge/License-MIT-16a34a)
 
-> 案件を中心に、フリーランスエンジニアとエージェントの業務をつなぐ OSS
+**案件を中心に、フリーランスエンジニアとエージェントの業務をつなぐ OSS**
 
 Tulpa は、フリーランスエージェント業務を整理するためのオープンソースソフトウェアです。案件、契約、稼働記録を案件中心でつなぎ、属人的になりやすい運用をシンプルに扱える状態を目指します。
 
