@@ -178,6 +178,16 @@ ExecPlanの書き方の仕様は [.agents/PLANS.md](.agents/PLANS.md) を参照�
 
 ---
 
+## エージェント権限と自律度
+
+AIエージェントに「どこまで委ねるか」は、能力の問題ではなく設計の問題である。
+
+- 何を自律実行してよいか・確認が必要か・禁止かの判断基準は [`.agents/knowledge/agent-authority.md`](.agents/knowledge/agent-authority.md) を参照する
+- ExecPlan の冒頭に `Autonomy Level`（A/B/C）と `Scope`・`Excluded` を記載することで、作業前に自走範囲を合意できる
+- ゴールは手段ではなく **意図** で書く。「このファイルを修正せよ」より「この機能が正しく動くようにせよ」
+
+---
+
 ## エージェント運用知見の扱い
 
 - `AGENTS.md` は原則・判断基準・用語のSSOTとして保つ。事例集や細かな運用メモはここに蓄積しない
