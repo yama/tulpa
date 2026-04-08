@@ -123,7 +123,7 @@ Tulpa でのゴール設計原則:
 過剰な確認や過剰な自走を防ぐ。
 
 ExecPlan の冒頭に記載する例:
-```
+```text
 Autonomy Level: B（実行＋報告）
 Scope: app/Services/ 以下のサービスクラス追加のみ
 Excluded: データベースマイグレーション実行、AGENTS.md の変更
