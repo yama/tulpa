@@ -108,7 +108,7 @@ Requirements
 
 | カテゴリ | 技術 |
 |------|------|
-| バックエンド | PHP 8.2+ / Laravel 12 |
+| バックエンド | PHP 8.2+ / Laravel 13 |
 | フロントエンド | Alpine.js + htmx / Tailwind CSS |
 | データベース | MySQL 8.0+ / MariaDB 10.6+ |
 | オプション | Claude API / Slack API |

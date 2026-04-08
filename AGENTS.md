@@ -31,7 +31,7 @@ AI エージェントは、コードを書く前に次の順で文書を確認�
 
 ## 技術スタック
 
-- PHP 8.2+ / Laravel 12
+- PHP 8.2+ / Laravel 13
 - Alpine.js + htmx（ビルド不要・CDN配信）
 - Tailwind CSS（ビルド済み軽量版）
 - MySQL 8.0+ / MariaDB 10.6+

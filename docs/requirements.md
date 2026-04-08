@@ -685,14 +685,14 @@ MVPでは最小限の画面構成とする。
 
 ## 6. 技術スタック
 
-PHP 8.2+ / Laravel 12・Alpine.js + htmx・Tailwind CSSを採用する。レンタルサーバーでも動作する軽量設計はOSSとしての重要な要件であり、変えない。Claude API・Slack API・PWA対応を追加する。
+PHP 8.2+ / Laravel 13・Alpine.js + htmx・Tailwind CSSを採用する。レンタルサーバーでも動作する軽量設計はOSSとしての重要な要件であり、変えない。Claude API・Slack API・PWA対応を追加する。
 
 ### 6.1 技術スタック一覧
 
 | レイヤー | 技術 | 備考 |
 |---------|------|------|
 | 言語 | PHP 8.2+ | 型宣言・Attributes・Enumの活用 |
-| フレームワーク | Laravel 12 | ルーティング・ORM・認証・テンプレートを包括 |
+| フレームワーク | Laravel 13 | ルーティング・ORM・認証・テンプレートを包括 |
 | テンプレート | Blade | Laravel組み込み |
 | ORM | Eloquent | Laravel組み込み |
 | フロントエンド | Alpine.js + htmx | ビルド不要、CDN配信 |
