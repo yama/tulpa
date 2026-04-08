@@ -10,8 +10,8 @@
 ### `.agents/agents/` の導入
 
 - Status: pending
-- Revisit When: 役割ごとのレビュー観点や実装観点が増え、`skills/` だけでは責務分離が弱くなったとき
-- Why It Matters: `requirements-reviewer` や `agent-knowledge-curator` のような役割テンプレートを定義できる
+- Revisit When: 役割ごとのレビュー観点や実装観点が増え、`skills/` だけでは責務分離が弱くなったとき、または複数エージェントが並行して異なる役割を担う運用になったとき
+- Why It Matters: `requirements-reviewer` や `knowledge-curator` のような役割テンプレートを定義できる
 - Do Not Start Yet: 現時点ではスキル数も少なく、管理対象だけ増えるリスクがある
 
 ### ExecPlan 限定の handoff ノート
@@ -23,10 +23,10 @@
 
 ### 軽い自動フックの導入
 
-- Status: pending
-- Revisit When: `record_learning.php` や `refresh_memory.php` の実行忘れが繰り返し発生したとき
-- Why It Matters: 作業後の最低限の棚卸しを自動で促せる
-- Do Not Start Yet: 先に運用ルールを安定させないと、フックがノイズ源になる
+- Status: done
+- Completed: 2026-04-08
+- What Was Done: `.claude/settings.json` に PostToolUse フックを設定。`git commit` 完了後に `.claude/hooks/after-commit.sh` が動き、学びの記録・棚卸しコマンドをリマインドする
+- Next: 実際の運用で「ノイズが多い」「別トリガーが必要」という事例が出たら `.agents/learnings/` に記録して見直す
 
 ### Learnings の監査自動化強化
 
@@ -34,6 +34,13 @@
 - Revisit When: `superseded` 候補や重複候補が増え、手では追いづらくなったとき
 - Why It Matters: 知識は増えるより腐るほうが危険なので、棚卸しの自動化価値が高い
 - Current Step: `.agents/scripts/audit_learnings.php` を導入して最小監査を始める
+
+### エージェント権限境界の精緻化
+
+- Status: in_progress
+- Revisit When: 「確認が必要かどうか迷った」事例が 3 件以上 `.agents/learnings/` に蓄積されたとき
+- Why It Matters: 自走範囲が広がるほど、境界の曖昧さが意思決定コストを増やす
+- Current Step: `.agents/knowledge/agent-authority.md` に初版の 3 層モデルを定義済み。実運用で事例を積み上げる段階
 
 ## Review Rule
 

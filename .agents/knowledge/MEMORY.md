@@ -12,6 +12,7 @@
 | Topic | Summary | Source of Truth | Last Reviewed |
 |------|---------|----------------|---------------|
 | `agent-improvement` | 学びの記録、昇格基準、圧縮ルール | `../agent-improvement.md` | 2026-04-05 |
+| `agent-authority` | エージェント権限境界（自律可・要確認・禁止）の3層モデル | `agent-authority.md` | 2026-04-08 |
 
 ## Promotion Targets
 
@@ -34,6 +35,7 @@
 | File | Summary |
 |------|---------|
 | `README.md` | Agent Knowledge |
+| `agent-authority.md` | エージェント権限境界（自律可・要確認・禁止）とエスカレーション基準 |
 | `agent-workflow.md` | Agent Workflow Knowledge |
 | `future-considerations.md` | Future Considerations |
 | `meta-behavior.md` | Meta Behavior Knowledge |
@@ -41,10 +43,11 @@
 
 ## Future Reminders
 
-- `.agents/agents/` の導入 / Status: pending / Revisit When: 役割ごとのレビュー観点や実装観点が増え、`skills/` だけでは責務分離が弱くなったとき
+- `.agents/agents/` の導入 / Status: pending / Revisit When: 役割ごとのレビュー観点・実装観点が増え、`skills/` だけでは責務分離が弱くなったとき
 - ExecPlan 限定の handoff ノート / Status: pending / Revisit When: 1つの ExecPlan が複数日にまたがり、途中再開コストが高い作業が増えたとき
-- 軽い自動フックの導入 / Status: pending / Revisit When: `record_learning.php` や `refresh_memory.php` の実行忘れが繰り返し発生したとき
+- 軽い自動フックの導入 / Status: done / Completed: 2026-04-08 / `.claude/settings.json` に PostToolUse フックを実装
 - Learnings の監査自動化強化 / Status: in_progress / Revisit When: `superseded` 候補や重複候補が増え、手では追いづらくなったとき
+- エージェント権限境界の精緻化 / Status: in_progress / Revisit When: 「確認が必要か迷った」事例が 3 件以上 learnings に蓄積されたとき
 
 ## Archive Policy
 
