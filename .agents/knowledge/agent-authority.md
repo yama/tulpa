@@ -41,11 +41,11 @@ AIエンジニアリングの進化では、エージェントの実行能力が
 **ドキュメント変更**
 - `AGENTS.md` の直接編集（変更提案は `propose_agent_updates.php` で行う）
 - `docs/requirements.md` の変更（SSOT のため）
-- `CLAUDE.md` の変更
+- エージェント別エントリーポイント（`CLAUDE.md` / `CODEX.md`）の変更
 
 **外部サービス**
 - Slack API への書き込み
-- Claude API を使った外部向けの生成・送信
+- LLM API（Claude / OpenAI）を使った外部向けの生成・送信
 
 **環境操作**
 - ブランチの削除

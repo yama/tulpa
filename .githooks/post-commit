@@ -1,0 +1,7 @@
+#!/bin/bash
+# .githooks/post-commit
+#
+# エージェント非依存の post-commit フック。
+# git commit 完了時に共通リマインダーを表示する。
+
+bash scripts/after-commit-reminder.sh

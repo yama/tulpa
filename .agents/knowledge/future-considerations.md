@@ -25,8 +25,9 @@
 
 - Status: done
 - Completed: 2026-04-08
-- What Was Done: `.claude/settings.json` に PostToolUse フックを設定。`git commit` 完了後に `.claude/hooks/after-commit.sh` が動き、学びの記録・棚卸しコマンドをリマインドする
-- Next: 実際の運用で「ノイズが多い」「別トリガーが必要」という事例が出たら `.agents/learnings/` に記録して見直す
+- What Was Done: Claude Code では `.claude/settings.json` の PostToolUse フックを設定。`git commit` 完了後に `.claude/hooks/after-commit.sh` が動き、共通リマインダー `scripts/after-commit-reminder.sh` を呼ぶ
+- What Was Done (Codex): `.githooks/post-commit` と `scripts/setup-git-hooks.sh` を追加し、`bash scripts/setup-git-hooks.sh` でエージェント非依存の post-commit リマインダーを有効化できるようにした
+- Next: 実運用で「ノイズが多い」「コミット種別で出し分けたい」事例が出たら `.agents/learnings/` に記録して見直す
 
 ### Learnings の監査自動化強化
 

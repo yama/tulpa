@@ -25,29 +25,9 @@ elif command -v jq &>/dev/null; then
     COMMAND=$(echo "$STDIN_DATA" | jq -r '.tool_input.command // .command // ""' 2>/dev/null)
 fi
 
-# git commit コマンドのときだけリマインダーを表示する
+# git commit コマンドのときだけ共通リマインダーを表示する
 if echo "$COMMAND" | grep -qE "git commit"; then
-    echo ""
-    echo "=== 学びの記録チェック（コミット完了） ==="
-    echo ""
-    echo "今回の作業で横断的に再利用できる発見があれば記録してください。"
-    echo "一度限りのローカル事情は記録不要です。"
-    echo ""
-    echo "  # 記録する場合"
-    echo "  php .agents/scripts/record_learning.php \\"
-    echo "    --source=implementation \\"
-    echo "    --scope=<scope> \\"
-    echo "    --title='...' \\"
-    echo "    --observation='...' \\"
-    echo "    --impact='...' \\"
-    echo "    --confidence=high"
-    echo ""
-    echo "  # 棚卸し（learnings が 10 件以上たまったら）"
-    echo "  php .agents/scripts/audit_learnings.php"
-    echo "  php .agents/scripts/summarize_learnings.php"
-    echo "  php .agents/scripts/refresh_memory.php"
-    echo ""
-    echo "==========================================="
+    bash scripts/after-commit-reminder.sh
 fi
 
 exit 0
