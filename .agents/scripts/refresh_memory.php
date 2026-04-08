@@ -3,15 +3,16 @@
 
 declare(strict_types=1);
 
-$options = getopt('', ['stdout::', 'help::']);
+$options = getopt('', ['stdout::', 'help::', 'output:']);
 
 if (array_key_exists('help', $options)) {
     fwrite(STDOUT, <<<TEXT
 Usage:
-  php .agents/scripts/refresh_memory.php [--stdout]
+  php .agents/scripts/refresh_memory.php [--stdout] [--output=/path/to/MEMORY.md]
 
 Options:
   --stdout    Print the generated MEMORY.md content instead of writing the file
+  --output    Write to the specified file path instead of .agents/knowledge/MEMORY.md
 
 TEXT);
     exit(0);
@@ -20,6 +21,7 @@ TEXT);
 $root = dirname(__DIR__, 2);
 $knowledgeDir = $root . '/.agents/knowledge';
 $memoryPath = $knowledgeDir . '/MEMORY.md';
+$outputPath = $options['output'] ?? $memoryPath;
 
 $knowledgeFiles = [];
 $iterator = new RecursiveIteratorIterator(
@@ -170,14 +172,30 @@ if (array_key_exists('stdout', $options)) {
     exit(0);
 }
 
-$bytes = @file_put_contents($memoryPath, $markdown);
+$bytes = @file_put_contents($outputPath, $markdown);
 
 if ($bytes === false) {
-    fwrite(STDERR, "Failed to write memory file: {$memoryPath}\n");
+    $error = error_get_last();
+    $message = is_array($error) ? (string) ($error['message'] ?? '') : '';
+
+    fwrite(STDERR, "Failed to write memory file: {$outputPath}\n");
+    if ($message !== '') {
+        fwrite(STDERR, "Reason: {$message}\n");
+    }
+
+    if (str_contains($message, 'Read-only file system')) {
+        $fallbackPath = '/tmp/tulpa-MEMORY.generated.md';
+        $fallbackBytes = @file_put_contents($fallbackPath, $markdown);
+        if ($fallbackBytes !== false) {
+            fwrite(STDERR, "Fallback written: {$fallbackPath}\n");
+            fwrite(STDERR, "Tip: use --stdout or --output to write to a writable path.\n");
+        }
+    }
+
     exit(1);
 }
 
-fwrite(STDOUT, $memoryPath . PHP_EOL);
+fwrite(STDOUT, $outputPath . PHP_EOL);
 
 function extractHeading(string $contents): ?string
 {
